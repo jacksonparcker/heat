@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Online Marketing Services">
+    <meta name="keywords" content="HEALTH AND BEAUTY COSMETIC COMPANY">
+    <meta name="JACKSON PARCKER" content="HEALTH AND BEAUTY COSMETICS COMPANY">
+    <title>HEALTH AND BEAUTY COSMETICS COMPANY</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 2vw;
+        }
+
+        header {
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .profile {
+          display: flex;
+          background: #0000a4;
+          width: 15vw;
+          text-align: center;
+          margin-top: 2.5vw;
+          border: 1vw solid aqua;
+          border-radius: 2vw;
+          font-size: 4vw;
+          padding: 1vw;
+        }
+        h1 {
+            margin-top: -8vw;
+            font-size: 4vw;
+            width: 60vw;
+            position: relative;
+            display: flex;
+            margin-left: 18vw;
+            background: #0000a4;
+            border-radius: 2vw;
+        }
+        .gridsection1 {
+          display: block;
+          overflow-y: scroll;
+          height: 130vw;
+          
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            grid-template-rows: repeat(10, auto); /* 10 rows */
+            gap: 2vw;
+            height: 130vw; /* Set a fixed height for vertical scrolling */
+            overflow-y: scroll; /* Enable vertical scroll */
+            padding: 1vw;
+            width: 80vw;
+            margin-left: 14vw;
+            background-color: white;
+            border-radius: 2vw;
+            box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-container1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            grid-template-rows: repeat(10, auto); /* 10 rows */
+            gap: 2vw;
+            height: 130vw; /* Set a fixed height for vertical scrolling */
+            overflow-y: scroll; /* Enable vertical scroll */
+            padding: 1vw;
+            width: 80vw;
+            margin-left: 14vw;
+            background-color: white;
+            border-radius: 2vw;
+            box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-item {
+            background-color: #007bff;
+            color: white;
+            padding: 2vw;
+            text-align: center;
+            border-radius: 2vw;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            height: 55vw;
+        }
+        .serviceimage { 
+          width: 25vw;
+          height: 30vw;
+        }
+        .serviceimagelarge {
+          width: 75vw;
+          height: 35vw;
+         
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+        }
+
+        .item-name {
+            margin-top: 1vw;
+            font-size: 3vw;
+            color: black;
+            height: 5vw;
+           
+        }
+
+        .item-price {
+            margin-top: 5vw;
+            margin-bottom: 1vw;
+            font-size: 4vw;
+            color: #fafafa;
+        }
+
+        .add-to-cart-btn {
+            margin-top: -2vw;
+            padding: 1vw 2vw;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            width: 25vw;
+            height: 7vw;
+            border-radius: 1vw;
+            cursor: pointer;
+            font-size: 3vw;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #e64a19;
+        }
+
+        /* Cart Icon */
+        .cart-icon {
+          position: absolute;
+          padding: 2vw;
+            background-color: #f17c00;
+            color: white;
+            border-radius: 20vw;
+            cursor: pointer;
+            font-size: 3vw;
+            width: 9vw;
+            height: 9vw;
+            margin-left: 84vw;
+            margin-top: -9vw;
+        }
+
+        /* Cart Popup */
+        .cart-popup {
+            position: fixed;
+            
+            top: 15vw;
+            right: 6vw;
+            width: 75vw;
+            background-color: white;
+            
+            padding: 3vw;
+            border-radius: 2vw;
+            box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.1);
+            display: none; /* Initially hidden */
+        }
+
+        .cart-popup h3 {
+            margin-bottom: 2vw;
+            font-size: 5vw;
+        }
+
+        .cart-items {
+            max-height: 20vw;
+            overflow-y: auto;
+            margin-bottom: 2vw;
+            font: 3vw;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1vw;
+            font-size: 4vw;
+        }
+
+        .cart-total {
+            font-weight: bold;
+            text-align: right;
+            margin-top: 2vw;
+            font-size: 3vw;
+        }
+
+        .remove-item-btn {
+            margin-left: 3vw;
+            padding: 1vw 2vw;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            font-size: 3vw;
+            border-radius: 2vw;
+            cursor: pointer;
+        }
+
+        .remove-item-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .submit-cart-btn {
+            padding: 1vw 2vw;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            font-size: 5vw;
+            border-radius: 1vw;
+            cursor: pointer;
+            margin-top: 4vw;
+            width: 100%;
+        }
+
+        .submit-cart-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Service Details Section */
+        .service-details {
+            background-color: white;
+            padding: 2vw;
+            border-radius: 2vw;
+            overflow-y: scroll;
+            box-shadow: 0 2vw 4vw rgba(0, 0, 0, 0.1);
+            margin-top: 5vw;
+            width: 80vw;
+            height: 130vw;
+            margin-left: 14vw;
+            display: none; /* Initially hidden */
+        }
+        .profile-details {
+            background: linear-gradient(90deg ,#00e0ff ,blue);
+            padding: 2vw;
+            border-radius: 2vw;
+            box-shadow: 0 2vw 4vw rgba(0, 0, 0, 0.1);
+            margin-top: -130vw;
+            width: 80vw;
+            position: relative;
+            margin-left: 15vw;
+            height: 130vw;
+            display: none; /* Initially hidden */
+        }
+        .tosend {
+            background-color: aqua;
+            padding: 2vw;
+            border-radius: 2vw;
+            box-shadow: 0 2vw 4vw rgba(0, 0, 0, 0.1);
+            margin-top: -90vw;
+            width: 80vw;
+            position: relative;
+            margin-left: 15vw;
+            height: 50vw;
+            border: 1vw solid blue;
+            display: none; /* Initially hidden */
+        }
+        .tosend input{
+          margin-left: 11vw;
+          border: 1vw solid blue;
+          border-radius: 2vw;
+          font-size: 3vw;
+          width: 50vw;
+          height: 6vw;
+        }
+        .tosend p{
+          color: blue;
+          text-align: center;
+          font-size: 4vw;
+        }
+        .tosend button {
+          width: 17vw;
+          background: white;
+          border: 1vw solid blue;
+          text-align: center;
+          margin-left: 29vw;
+          border-radius: 1vw;
+          height: 7vw;
+        }
+        .service-title {
+            color: #007bff;
+            font-size: 5vw;
+            margin-bottom: 2vw;
+            margin-left: 1vw;
+            
+        }
+
+        .service-description {
+            font-size: 4vw;
+            line-height: 5vw;
+            margin-left: 1vw;
+        }
+        .other {
+          margin-left: 25vw;
+          font-size: 4vw;
+          color: blue;
+        }
+
+        /* Horizontal Scroll Grid at Bottom */
+        .grid-container-horizontal {
+            display: grid;
+            grid-template-columns: repeat(1000, 1fr); /* 6 columns for a wider scroll */
+            gap: 2vw;
+            overflow-x: auto; /* Enable horizontal scroll */
+            padding: 2vw;
+            background-color: white;
+            border-radius: 2vw;
+            box-shadow: 0 2vw 4vw rgba(0, 0, 0, 0.1);
+            margin-top: 4vw;
+            text-align: center;
+            
+            /* Ensure the items stay in a single row */
+        }
+
+        .grid-container-horizontal::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for cleaner look */
+        .grid-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .grid-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin-bottom: 2vw;
+            display: flex;
+            margin-top: 2vw;
+            margin-left: 20vw;
+            
+        }
+
+        .search-container input[type="text"] {
+            padding: 1vw;
+            font-size: 5vw;
+            border: 1vw solid #ddd;
+            border-radius: 3vw;
+            outline: none;
+        }
+
+        .search-container input[type="text"]:focus {
+            border-color: #007bff;
+        }
+        .base {
+          position: relative;
+          display: flex;
+          margin-top: -142vw;
+          margin-left: -3vw;
+          width: 33vw;
+          height: 145vw;
+        }
+        .ball {
+          position: relative;
+          display: flex;
+          margin-top: -87vw;
+          width: 25vw;
+          height: 27vw;
+        }
+        .this {
+          width: 15vw;
+          height: 15.5vw;
+          position: relative;
+          margin-left: -2.5vw;
+          
+        }
+        .sea {
+          position: relative;
+          margin-left: -2vw;
+          margin-top: -1.9vw;
+          color: white;
+          background: blue;
+          border: 1vw solid aqua;
+          width: 15vw;
+          border-radius: 2vw;
+          text-align: center;
+          font-size: 4vw;
+          
+        }
+        .lab1 {
+          margin-top: -70vw;
+        }
+        .lab2 {
+          margin-top: 1vw;
+        }
+        .lab3 {
+          margin-top: 23vw;
+        }
+        .lab4 {
+          margin-top: 2vw;
+        }
+        .footer {
+          height: 35vw;
+          margin-top: 25vw;
+          }
+        
+        .filter-items {
+          
+            background-color: aqua;
+            padding: 2vw;
+            border-radius: 2vw;
+            box-shadow: 0 2vw 4vw rgba(0, 0, 0, 0.1);
+            margin-top: -130vw;
+            width: 60vw;
+            position: relative;
+            margin-left: 25vw;
+            height: 45vw;
+            border: 1vw solid blue;
+            display: none; /* Initially hidden */
+        }
+        .filter-items button {
+          width: 40vw;
+          margin: 2vw 8vw;
+          font-size: 4vw;
+        }
+        .grid-sectio {
+          margin-top: -130vw;
+          position: relative;
+          display: none;
+        }
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: 0.4} 
+      to {opacity: 1}
+    }
+    .hot {
+      color: aqua;
+      width: 24vw;
+      border: 1vw solid blue;
+      background: black;
+      margin-left: 27vw;
+      font-size: 4vw;
+      text-align: center;
+    }
+    
+    
+ .slideshow-container {
+      position: relative;
+      width: 80vw;
+      margin-left: 14vw;
+      overflow: hidden;
+      height: 30vw;
+      /* Hide images outside the container */
+    }
+ .slideshow-container img{
+      vertical-align: center;
+      height: 30vw;
+      width: 80vw;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out; /* Faster sliding for touch */
+    }
+    .mySlide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+    /* Caption (name) styling */
+    .caption {
+      color: #f2f2f2;
+      font-size: 4vw;
+      padding: 4vw 6vw;
+      position: absolute;
+      bottom: 4vw;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    }
+
+    /* Dots for indicating current slide */
+    .dot-container {
+      text-align: center;
+      width: 94vw;
+      height: 7vw;
+      background: #4ce6fe;
+    }
+
+    .dot {
+      height: 2vw;
+      width: 2vw;
+      margin: 0vw 3vw;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active {
+      background-color: #717171;
+    }
+    </style>
+    <style>
+    .slideshow-container-new {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+    }
+    .slideshow-container-new img{
+      position: relative;
+      height: 40vw;
+      width: 80vw;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .mySlides-new {
+      display: none;
+      width: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .prev-new, .next-new {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 6vw;
+      margin-top: -20vw;
+      color: white;
+      font-weight: bold;
+      font-size: 6vw;
+      user-select: none;
+    }
+
+    .next-new {
+      right: 0;
+    }
+
+    .prev-new {
+      left: 0;
+    }
+
+    .caption-new {
+      color: #f2f2f2;
+      font-size: 6vw;
+      padding: 4vw 6vw;
+      position: absolute;
+      bottom: 4vw;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+     <style>
+        /* Popup-specific styles */
+        .popup-box {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-body {
+            background-color: white;
+            padding: 8vw;
+            border-radius: 4vw;
+            text-align: center;
+            width: 70vw;
+            position: relative;
+        }
+
+        .close-popup-btn {
+            position: absolute;
+            top: 4vw;
+            right: 6vw;
+            font-size: 6vw;
+            cursor: pointer;
+        }
+        /* Button inside the popup */
+        .trigger-popup-btn {
+            padding: 3vw 5vw;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .trigger-popup-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+    
+      <!-- Link to Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Footer Styles */
+        footer {
+            background-color: #222;
+            color: #fff;
+            height: 45vw;
+            padding: 10vw;
+            text-align: center;
+            margin-top: 20vw;
+            font-size: 4vw;
+            border: 1vw solid aqua;
+            border-radius: 4vw;
+        }
+        
+        footer a {
+            margin-top: -2vw;
+            font-size: 4vw;
+            
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-social-icons {
+            margin: 1vw 0;
+            margin-top: -8vw;
+        }
+
+        .footer-social-icons a {
+            margin: 0 1vw;
+            display: inline-block;
+        }
+
+        /* Colored Icons */
+        .fab.fa-facebook-f {
+            color: #3b5998;
+        }
+
+        .fab.fa-tiktok {
+            color: #010101;
+        }
+
+        .fab.fa-instagram {
+            color: #e4405f;
+        }
+
+        .fab.fa-twitter {
+            color: #1da1f2;
+        }
+
+        .fab.fa-whatsapp {
+            color: #25d366;
+        }
+
+        .fas.fa-phone-alt {
+            color: #00aaff;
+        }
+
+        .fas.fa-envelope {
+            color: #d44638;
+        }
+
+        .fab.fa-youtube {
+            color: #ff0000;
+        }
+
+        /* Footer contact section */
+        .footer-contact {
+            margin-top: 1vw;
+        }
+
+        .footer-contact i {
+            margin-right: 1vw;
+        }
+
+        .footer-contact p {
+            margin: 2vw 0;
+        }
+        .owner {
+          width: 40vw;
+          border-radius: 3vw;
+          border: 1vw solid lightblue;
+          outline: 1vw solid aqua;
+          
+        }
+        .owner1 {
+          width: 30vw;
+          display: flex;
+          position: relative;
+          border: 1vw solid aqua;
+          
+          border-radius: 10vw;
+          margin-top: -60vw;
+          margin-left: 45vw;
+        }
+        .owner3 {
+          width: 30vw;
+          display: flex;
+          position: relative;
+          border: 1vw solid aqua;
+          border-radius: 1vw;
+          margin-top: 5vw;
+          margin-left: 45vw;
+          height: 20vw;
+        }
+        .about {
+          background-color: white;
+          border-radius: 3vw;
+          margin-top: 5.5vw;
+          height: 65vw;
+          overflow-y: scroll;
+        }
+        .proh1 {
+          text-align: center;
+          font-size: 5vw;
+          width: 130;
+          margin-top: 5vw;
+          position: relative;
+          background-color: aqua;
+          
+        }
+        .proh2 {
+          text-align: center;
+          font-size: 4vw;
+          position: relative;
+          display: flex;
+        }
+        .pro {
+          font-size: 4vw;
+        }
+        .pro1 {
+          font-size: 4vw;
+          font-weight: bold;
+          margin-left: 15vw;
+        }
+
+    </style>
+    
+    
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+      <button class="profile" id="profile-button">Profile</button>
+        <h1>HEALTH AND BEAUTY COSMETICS COMPANY</h1>
+
+        <!-- Cart Icon -->
+        <div class="cart-icon" onclick="toggleCartPopup()">🛒 (<span id="cart-count">0</span>)</div>
+    </header>
+
+    <!-- Search Bar Section -->
+    <section class="contain-z">
+    <div class="search-container">
+        <input class="search" type="text" id="search-bar" placeholder="Search for product">
+    </div>
+
+    <!-- Grid Section with 3x10 vertical scroll layout -->
+    <section id="grid-section" class="gridsection1">
+        
+  <div class="slideshow-container" id="slideshow1">
+    <div class="slides" id="slidesContainer">
+      <!-- Slides will be inserted here by JavaScript -->
+    </div>
+  </div>
+
+  <div class="dot-container" id="dotContainer">
+    <!-- Dots will be inserted here by JavaScript -->
+  </div>
+      
+        <div class="grid-container" id="services-grid">
+            <!-- Dynamically load items here -->
+        </div>
+      
+    </section>
+   
+          <div>
+        
+    <!-- Service Details Section (Initially Hidden) -->
+    <section id="service-details" class="service-details">
+      <img id="service-image" class="serviceimagelarge">
+        <h2 class="service-title" id="service-title"></h2>
+        <button id="add-to-cart-btn" class="add-to-cart-btn">Add to Cart</button>
+        <p class="service-title" id="service-price"></p>
+        <p class="service-description" id="service-description"></p>
+        <!-- Other Services Section at Bottom with Horizontal Scroll -->
+        <div class="hot">
+          HOT SALES
+        </div>
+  
+  <div class="slideshow-container-new" id="slideshowNew">
+    <!-- Slides will be inserted here by JavaScript -->
+  </div>
+
+  <a class="prev-new" onclick="plusSlidesNew(-1)">&#10094;</a>
+  <a class="next-new" onclick="plusSlidesNew(1)">&#10095;</a>
+  
+        <div class="other">other products</div>
+        <div class="grid-container-horizontal" id="other-services-grid">
+            <!-- Dynamically load other services here -->
+        </div>
+        <div>
+        
+    </section>
+<section id="profile-details" class="profile-details">
+      <img src="base/owner.png" class="owner">
+      <img src="base/logo(0).png" class="owner1">
+      <video src="base/owner.png" class="owner3"></video>
+      <div class="about">
+      <p class="proh1">About us</p>
+      <h2 class="proh2">HEALTHY AND BEAUTY COSMETICS COMPANY</h2>
+      <p class="pro"> 
+It's a company that deals in medicine and cosmetology products 
+Like
+All kinds of perfumes
+Lotions 
+Shower gels 
+Air freshener 
+Hair products 
+Scars removal products 
+Stretch Marks removal products 
+Skin care products 
+Body shaping products 
+Weight loss/slimming products 
+Bathing soaps</p>
+      <p class="pro1">And we offer free delivery</p>
+      
+      </div>
+    </section>
+    <section id="grid-sectio" class="grid-sectio">
+        <div class="grid-container1" id="servi-grid">
+            <!-- Dynamically load items here -->
+        </div>
+      
+    </section>
+
+    
+
+        <div>
+        <img src="base/base.png" class="base">
+        </div>
+        <div>
+          <img src="base/ball.png" class="ball">
+        </div>
+        <div class="lab1">
+          <img src="base/ball.png" class="this" onclick="filterServices()">
+          <p class="sea">Search</p>
+        </div>
+        <div class="lab2">
+          <img src="base/ball.png" class="this" onclick="goBackToGrid()">
+          <p class="sea" onclick="goBackToGrid()">Home</p>
+        </div>
+        <div class="lab3">
+          <img src="base/ball.png" class="this" id="types">
+          <p class="sea">Type</p>
+        </div>
+        <div class="lab4">
+          <img src="base/ball.png" class="this">
+          <p class="sea">Help</p>
+        </div>
+        
+
+    <footer>
+        <div class="footer-social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:+1234567890"><i class="fas fa-phone-alt"></i></a>
+            <a href="mailto:someone@example.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt"></i> Location: 1234 Your Address, City, Country</p>
+            <p><i class="fas fa-phone-alt"></i> Phone: +1234567890</p>
+            <p><i class="fas fa-envelope"></i> Email: someone@example.com</p>
+        </div>
+
+        <p>&copy; 2024 Your Company Name. All Rights Reserved.</p>
+    </footer>
+       
+    <!-- Cart Popup -->
+    <div id="cart-popup" class="cart-popup">
+        <h3>Your Cart</h3>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be listed here -->
+        </div>
+        <div class="cart-total">Total: Shs<span id="cart-total">0.00</span></div>
+        <button class="submit-cart-btn" id="shoow">Submit Order</button>
+    </div>
+          <section id="tosend" class="tosend">
+      <p>Please enter datails</p>
+        <p class="location">location</p>
+        <input type="text" placeholder="location" id="location">
+        <p class="phone">phone</p>
+        <input type="text" placeholder="phone" id="phone">
+        <p class="address">address</p>
+        <input type="text" placeholder="address" id="address">
+        <button onclick="submitCart()">submit</button>
+    </section>
+    
+    
+    <section class="filter-items" id="filter-items">
+    <div id="services-list"></div>
+    <button onclick="filterServicesByType('All')">All</button>
+<button onclick="filterServicesByType('soap')">soap</button>
+<button onclick="filterServicesByType('perfume')">perfumes</button>
+<button onclick="filterServicesByType('other')">other</button>
+      </section>
+  
+     <div id="popupContainer" class="popup-box">
+        <div class="popup-body">
+            <span class="close-popup-btn">&times;</span>
+            <h2>successful!</h2>
+            <p style=" width=: 90vw;">Thank you for shopping with health and Beauty cosmetics company</p>
+        </div>
+    </div>
+    <script>
+        function success() {
+    document.getElementById('popupContainer').style.display = 'flex';
+}
+
+        document.querySelector('.close-popup-btn').addEventListener('click', function() {
+            document.getElementById('popupContainer').style.display = 'none';
+        });
+
+        // Close popup when clicking outside the content
+        window.addEventListener('click', function(event) {
+            if (event.target === document.getElementById('popupContainer')) {
+                document.getElementById('popupContainer').style.display = 'none';
+            }
+        });
+    </script>
+
+  <script>
+    // Array of images and their names
+    const slidesData1 = [
+      { src: 'product1/1.png', name: 'Balisanyuka products' },
+      { src: 'product1/2.png', name: 'Air freshener' },
+      { src: 'product1/3.png', name: 'Nice and lovely' },
+      { src: 'product1/4.png', name: 'Do you have a big berry' },
+      { src: 'product1/5.png', name: 'Always the best' },
+      { src: 'product1/13.png', name: 'Faith and Royality' },
+      { src: 'product1/6.png', name: 'Do you need any spray' },
+      { src: 'product1/15.png', name: 'Beauty and skin care' }
+    ];
+
+    // Generate slides dynamically
+    const slideshowContainer1 = document.getElementById('slidesContainer');
+    const dotContainer = document.getElementById('dotContainer');
+
+    slidesData1.forEach((slide, index) => {
+      // Create slide div
+      const slideElement1 = document.createElement('div');
+      slideElement1.classList.add('mySlide');
+      slideElement1.innerHTML = `
+        <img src="${slide.src}" alt="${slide.name}">
+        <div class="caption">${slide.name}</div>
+      `;
+      slideshowContainer1.appendChild(slideElement1);
+
+      // Create dots
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      dotContainer.appendChild(dot);
+    });
+
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName('mySlide');
+    const dots = document.getElementsByClassName('dot');
+    
+    let startX = 0;
+    let endX = 0;
+
+    // Show current slide
+    function showSlide(n) {
+      if (n >= slides.length) {
+        slideIndex = 0;
+      }
+      if (n < 0) {
+        slideIndex = slides.length - 1;
+      }
+      slideshowContainer1.style.transform = `translateX(-${slideIndex * 100}%)`;
+
+      // Update dots
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove('active');
+      }
+      dots[slideIndex].classList.add('active');
+    }
+
+    // Automatic sliding every 3 seconds (optional)
+    function autoSlide() {
+      slideIndex++;
+      showSlide(slideIndex);
+      setTimeout(autoSlide, 8000); // Adjust the time if needed
+    }
+
+    // Swipe detection
+    slideshowContainer1.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX; // Get initial touch position
+    });
+
+    slideshowContainer1.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX; // Get final touch position
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      if (startX > endX + 50) {
+        // Swipe left
+        slideIndex++;
+        showSlide(slideIndex);
+      } else if (startX < endX - 50) {
+        // Swipe right
+        slideIndex--;
+        showSlide(slideIndex);
+      }
+    }
+
+    // Start the slideshow
+    autoSlide(); // You can comment this out if you don't want auto-sliding
+  </script>
+  
+    <script>
+      function clearSearch() {
+    // Clear the search input
+    document.getElementById('search-bar').value = '';
+    // Call another function after clearing the input
+        filterServices();
+}
+      var popuptype = document.getElementById("filter-items");
+  var showPopupBtn1 = document.getElementById("types");
+showPopupBtn1.onclick = function() {
+    if (popuptype.style.display === "none" || popuptype.style.display === "") {
+      popuptype.style.display = "block"; // Show the section
+      togglePopupBtn.textContent = "Profile"; // Change button text to "Hide"
+    } else {
+      popuptype.style.display = "none"; // Hide the section
+      togglePopupBtn.textContent = "Show Section"; // Change button text to "Show"
+    }
+  }
+      var popupSection = document.getElementById("profile-details");
+  var showPopupBtn = document.getElementById("profile-button");
+var showPopupBtn = document.getElementById("profile-button");
+var sere = document.getElementById("grid-sectio");
+showPopupBtn.onclick = function() {
+    if (popupSection.style.display === "none" || popupSection.style.display === "") {
+      popupSection.style.display = "block";
+      sere.style.display = "none";
+      // Show the section
+      togglePopupBtn.textContent = "Profile"; // Change button text to "Hide"
+    } else {
+      popupSection.style.display = "none"; // Hide the section
+      togglePopupBtn.textContent = "Show Section"; // Change button text to "Show"
+    }
+  }
+  </script>
+  <script>
+      var popupcart = document.getElementById("tosend");
+   var showPopupBtn = document.getElementById("shoow");
+showPopupBtn.onclick = function() {
+    if (popupcart.style.display === "none" || popupSection.style.display === "") {
+      popupcart.style.display = "block"; // Show the section
+    } else {
+      popupcart.style.display = "none"; // Hide the section
+    }
+  }
+  </script>
+  <script>
+        // Generate grid items dynamically
+        function generateGridItems() {
+            const gridContainer = document.getElementById('services-grid');
+            gridContainer.innerHTML = ''; // Clear the grid
+            
+            services.forEach(service => {
+                const gridItem = document.createElement('div');
+                gridItem.className = 'grid-item';
+                
+                gridItem.innerHTML = `
+               <img  class="item-icon"><img src="${service.image}" class="serviceimage"></div>
+                                      <div class="item-name">${service.title}</div>
+                                      <div class="item-price">Shs${service.price}</div>
+                                      <button class="add-to-cart-btn" onclick="addToCart(${service.id})">Add to Cart</button>`;
+                gridItem.addEventListener('click', () => loadServiceDetails(service.id));
+                gridContainer.appendChild(gridItem);
+            });
+        }
+        // Load service details when an item is clicked
+        function loadServiceDetailns(serviceId) {
+    // Find the selected service by id
+    const selectedService = services.find(service => service.id === serviceId);
+    // Set service title and description
+    document.getElementById('service-title').innerText = selectedService.title;
+    document.getElementById('service-description').innerText = selectedService.description;
+document.getElementById('serviceimage').src = selectedService.image;
+document.getElementById('service-price').innerText = selectedService.price;
+    // Set the service image (if you have an image in the service details)
+    const serviceImage = document.getElementById('service-image');
+    if (serviceImage) {
+        serviceImage.src = selectedService.image;
+        serviceImage.alt = selectedService.title;  // Set alt attribute for better accessibility
+    }
+     document.getElementById('grid-sectio').style.display = 'none';
+    // Show service details section and hide the grid
+    document.getElementById('grid-section').style.display = 'none';
+    document.getElementById('service-details').style.display = 'block';
+    // Generate the horizontal grid of other services
+    generateOtherServices(serviceId);
+}
+function generateOtherServices(currentServiceId) {
+    const otherServicesContainer = document.getElementById('other-services');
+    otherServicesContainer.innerHTML = ''; // Clear any existing content
+    services.forEach(service => {
+        // Exclude the currently selected service
+        if (service.id !== currentServiceId) {
+            const serviceItem = document.createElement('div');
+             // Add a class for styling
+            // Add content to the service item
+            // Add click event to load service details when clicking an item
+            serviceItem.addEventListener('click', () => {
+                loadServiceDetails(service.id);
+            });
+            // Append the service item to the horizontal grid container
+            otherServicesContainer.appendChild(serviceItem);
+        }
+    });
+}
+        // Generate other services grid for the service details page
+        function generateOtherServices(excludeServiceId) {
+            const otherServicesGrid = document.getElementById('other-services-grid');
+            otherServicesGrid.innerHTML = ''; // Clear the grid
+            services.forEach(service => {
+                if (service.id !== excludeServiceId) {
+                    const gridItem = document.createElement('div');
+                    gridItem.className = 'grid-item';
+                    gridItem.innerHTML = `<img  class="item-icon"><img src="${service.image}" class="serviceimage"></div>
+                    <div class="item-name">${service.title}</div>
+                                          <div class="item-price">Shs)${service.price}</div>
+                                          <button class="add-to-cart-btn" onclick="addToCart(${service.id})">Add to Cart</button>`;
+                    gridItem.addEventListener('click', () => loadServiceDetails(service.id));
+                    otherServicesGrid.appendChild(gridItem);
+                }
+            });
+        }
+        // Go back to the main grid view (Home Button functionality)
+        function goBackToGrid() {
+            document.getElementById('service-details').style.display = 'none'; // Hide the details section
+            document.getElementById('filter-items').style.display = 'none'; // Hide the details section
+            document.getElementById('profile-details').style.display = 'none'; // Hide the details section
+            document.getElementById('tosend').style.display = 'none'; // Hide the details section
+            document.getElementById('cart-popup').style.display = 'none'; // Hide the details section
+            document.getElementById('grid-sectio').style.display = 'none'; // Hide the details section
+            document.getElementById('grid-section').style.display = 'block'; // Show the grid section
+            document.getElementById('grid-section').style.display = 'block';
+            // Show the grid section
+            clearSearch();
+        }
+        // Filter services based on the search input
+  </script>
+
+  <script>
+    const slidesDataNew = [
+      { src: 'product1/14.png', name: 'Scar products' },
+      { src: 'product1/18.png', name: 'Body slimming' },
+      { src: 'product1/12.png', name: 'Body shapeup' },
+      { src: 'product1/11.png', name: 'Smart collection' },
+      { src: 'product1/8.png', name: 'For all skin type' },
+      { src: 'product1/9.png', name: 'For all skin products' },
+      { src: 'product1/10.png', name: 'Body lotion for skin caring' },
+      { src: 'product1/17.png', name: 'At a free delivery' }
+    ];
+
+    const slideshowContainerNew = document.getElementById('slideshowNew');
+
+    slidesDataNew.forEach((slide) => {
+      const slideElementNew = document.createElement('div');
+      slideElementNew.classList.add('mySlides-new');
+      slideElementNew.innerHTML = `
+        <img src="${slide.src}">
+        <div class="caption-new">${slide.name}</div>
+      `;
+      slideshowContainerNew.appendChild(slideElementNew);
+    });
+
+    let slideIndexNew = 0;
+    showSlidesNew();
+
+    function showSlidesNew() {
+      const slidesNew = document.getElementsByClassName('mySlides-new');
+      for (let i = 0; i < slidesNew.length; i++) {
+        slidesNew[i].style.display = 'none';
+      }
+      slideIndexNew++;
+      if (slideIndexNew > slidesNew.length) { slideIndexNew = 1; }
+      slidesNew[slideIndexNew - 1].style.display = 'block';
+      setTimeout(showSlidesNew, 8000); // Change image every 4 seconds
+    }
+
+    function plusSlidesNew(n) {
+      slideIndexNew += n - 1;
+      showSlidesNew();
+    }
+
+    // Swipe Gesture Handling
+    let touchStartXNew = 0;
+    let touchEndXNew = 0;
+
+    slideshowContainerNew.addEventListener('touchstart', (e) => {
+      touchStartXNew = e.changedTouches[0].screenX;
+    });
+
+    slideshowContainerNew.addEventListener('touchend', (e) => {
+      touchEndXNew = e.changedTouches[0].screenX;
+      handleSwipeNew();
+    });
+
+    function handleSwipeNew() {
+      if (touchEndXNew < touchStartXNew) {
+        plusSlidesNew(1); // Swipe left, show next slide
+      } else if (touchEndXNew > touchStartXNew) {
+        plusSlidesNew(-1); // Swipe right, show previous slide
+      }
+    }
+  </script>
+      <script src="filter.js"></script>
+      <script src="cart.js"></script>
+      <script src="servicedetails.js"></script>
+      <script src="email.js"></script>
+      <script src="items.js"></script>
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
+  
+</body>
+</html>
